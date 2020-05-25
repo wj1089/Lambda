@@ -1,8 +1,17 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue"
+import App from "./App.vue"
+import router from "./routers"
+import {store} from "./stores"
+import axios from 'axios'
+import vuex from 'vuex'
+
 
 Vue.config.productionTip = false
-
+Vue.use(vuex)
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  router,
+  store,
+  axios,
+  vuex,
+  render: h => h(App)
+}).$mount("#app")
