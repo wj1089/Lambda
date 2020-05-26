@@ -1,9 +1,11 @@
 <template>
-  <div id="app">
-    <Google/>
-  </div>
+  <v-content>
+    <router-view/>
+  </v-content>
 </template>
 
+
+<!--
 <script>
   import Google from './components/Google'
   export default {
@@ -13,4 +15,4 @@
   }
 </script>
 <style>
-</style>
+</style>-->

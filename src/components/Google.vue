@@ -7,7 +7,7 @@
         </div>
         <br>
         <div>
-            <img id="google" src="https://www.google.co.kr/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" title="Google">
+            <img id="google" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" title="Google">
         </div>
         <div>
             <input id="search" v-model="searchWord" type="text" style=" background-repeat: no-repeat; background-position: 88% 50%, 98% 50%;" title="검색">
@@ -15,6 +15,7 @@
         <div id="box">
             <input  @click="search" id="google_search" type="button" value="Google 검색">
         </div>
+            <h3>검색된 수 : {{count}}</h3>
         <div id="bottom">
             <div id="bottom_left">
                 <a>광고</a>
@@ -34,11 +35,14 @@
     import {mapState} from 'vuex'
     export default {
         data(){
-            return {searchWord : ''}
+            return {searchWord : '',
+            bugsmusic : this.$store.state.bugsmusic
+            }
         },
         computed : {
             ...mapState({
-                bugsmusic : (state)=> state.crawling.bugsmusic
+                bugsmusic : (state) => state.crawling.bugsmusic,// crawling.state.bugsmusic 모듈화 전
+                count : (state) => state.crawling.count
             })
         },
         methods : {
