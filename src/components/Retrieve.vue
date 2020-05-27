@@ -1,5 +1,3 @@
-
-
 <template>
     <div>
         <h3>검색결과 : {{count}}</h3>
