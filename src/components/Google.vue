@@ -47,7 +47,7 @@
                 }else if(this.searchWord === '축구'){
                     this.$store.dispatch('soccer/search',this.searchWord)
                 }
-                alert(1)
+
          }
         }
     };

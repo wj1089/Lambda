@@ -27,10 +27,7 @@ const mutations ={
     }
 }
 const getters = {
-
 }
-
-
 
 export  default {
     name:'soccer',
