@@ -7,7 +7,7 @@ const state = {
     count: 0
 };
 const actions = {
-    async search({ commit }, searchWord) {
+    async search({commit}, searchWord) {
         alert("검색어: " + searchWord);
         axios
             .post(state.context + `bugsmusic`, searchWord, {

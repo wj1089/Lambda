@@ -41,7 +41,7 @@
         },
         computed : {
             ...mapState({
-                bugsmusic : (state) => state.crawling.bugsmusic,// crawling.state.bugsmusic 모듈화 전
+
                 count : (state) => state.crawling.count
             })
         },
