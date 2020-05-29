@@ -8,10 +8,10 @@ const state={
 }
 const actions={
     async search({commit},searchWord){
-        alert('검색어: ' + searchWord)
+        alert('검색어 : ' + searchWord)
         axios.get(state.context+"movie/"+searchWord)
             .then(({data})=>{
-                alert('검색된 결과수123 :'+data.count)
+                alert('검색된 결과 수 :'+data.count)
                 commit('SEARCH',data)
                 routers.push('/movie')
             })
@@ -28,7 +28,8 @@ const mutations={
             data.list.forEach(item =>{
                 state.movie.push({
                     seq: item.seq,
-                    movieName: item.movieName
+                    movieName: item.movieName,
+                    rankDate : item.rankDate
                 });
             });
         }

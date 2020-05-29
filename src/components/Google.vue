@@ -49,7 +49,7 @@
                 }else if(this.searchWord === '네이버영화'){
                     this.$store.dispatch('movie/search',this.searchWord)
                 }
-         }
+            }
         }
     };
 </script>
