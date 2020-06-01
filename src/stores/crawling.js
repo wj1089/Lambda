@@ -7,20 +7,6 @@ const state = {
     count: 0
 };
 
-/*
-switch(){
-    case '네이버영화':
-
-        break;
-    case '벅스뮤직':
-
-        break;
-}
-
-*/
-
-
-
 const actions = {
     async search({commit}, searchWord) {
         alert("검색어: " + searchWord);

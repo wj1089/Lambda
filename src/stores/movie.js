@@ -9,10 +9,10 @@ const state={
 const actions={
     async search({commit},searchWord){
         alert('검색어 : ' + searchWord)
-        axios.get(state.context+"movie/"+searchWord)
+        axios.get(state.context+"movie/list/0/"+searchWord)
             .then(({data})=>{
                 alert('검색된 결과 수 :'+data.count)
-                commit('SEARCH',data)
+                commit('MOVIE',data)
                 routers.push('/movie')
             })
             .catch(()=>{
@@ -21,20 +21,19 @@ const actions={
     }
 }
 const mutations={
-        SEARCH(state, data){
+    MOVIE(state, data){
             alert('뮤테이션 접속' + data.count);
             state.movie =[];
             state.count = data.count;
-            data.list.forEach(item =>{
-                state.movie.push({
-                    seq: item.seq,
-                    movieName: item.movieName,
-                    rankDate : item.rankDate
+            data.forEach(item =>{state.movie.push({
+                                 seq: item.seq,
+                                 movieName: item.movieName,
+                                 rankDate : item.rankDate
                 });
             });
         }
 };
-const getters={
+const getters={//JSON이니깐 , 를 걸어줘야한다.
     movie: state => state.movie,
     count :state => state.count
 }
