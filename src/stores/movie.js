@@ -1,5 +1,5 @@
 import axios from 'axios'
-import routers from '@/routers'
+import router from '@/routers'
 
 const state={
     context:'http://localhost:5000/',
@@ -13,10 +13,10 @@ const actions={
             .then(({data})=>{
                 alert('검색된 결과 수 :'+data.count)
                 commit('MOVIE',data)
-                routers.push('/movie')
+                router.push('/movie')
             })
-            .catch(()=>{
-                alert('통신실패입니다!')
+            .catch( error =>{
+                alert(`통신실패입니다 :: ${error}`)
             })
     }
 }
@@ -25,7 +25,7 @@ const mutations={
             alert('뮤테이션 접속' + data.count);
             state.movie =[];
             state.count = data.count;
-            data.forEach(item =>{state.movie.push({
+            data.list.forEach(item =>{state.movie.push({
                                  seq: item.seq,
                                  movieName: item.movieName,
                                  rankDate : item.rankDate
